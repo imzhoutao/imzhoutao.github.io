@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="MacOS 系统 lipo 工具操作手册" />
+    <meta property="og:title" content="MacOS 系统 lipo 工具操作手册" />
+    <meta property="twitter:title" content="MacOS 系统 lipo 工具操作手册" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="zitao, Zitao, 子涛的博客, zitao Blog, 博客, 个人网站, 互联网, 前端, 客户端, iOS, Objective-C, Swift, SDK, 音视频">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>子涛的博客 | zitao‘s Blog</title>
+    <title>MacOS 系统 lipo 工具操作手册 | 子涛的博客 | zitao‘s Blog</title>
 
-    <link rel="canonical" href="/top/about/">
+    <link rel="canonical" href="/post/macos-%E7%B3%BB%E7%BB%9F-lipo-%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">
 
     
     
@@ -149,14 +149,37 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-top-bg.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-top-bg.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>子涛 </h1>
-                    
-		    <span class="subheading">他强任他强，清风拂山岗</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>MacOS 系统 lipo 工具操作手册</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    子涛
+                             
+                            on 
+                            Wednesday, May 18, 2022
+                            
+                            
+                            
+                            
+                    </span>
                 </div>
             </div>
         </div>
@@ -169,143 +192,220 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container">
-            
-                <p>iOS 开发者，喜欢动画，喜欢数码，没事啥折腾！</p>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-            
-             
-            
+                
+                <h2 id="前言">前言</h2>
+<p><strong>lipo</strong> 是一个在通用文件上创建或操作的工具，用于从单个架构文件中创建通用文件或者从通用文件中提取单个架构文件，并显示架构信息。<strong>lipo</strong>一次只能执行一个命令。</p>
+<p>特点：</p>
+<ul>
+<li>读取单个输入文件并写入单个输出文件。</li>
+<li>输入文件永远不会被修改。</li>
+</ul>
+<h2 id="语法">语法</h2>
+<pre tabindex="0"><code>lipo input_file 命令 选项
+</code></pre><h2 id="命令">命令</h2>
+<table>
+<thead>
+<tr>
+<th>命令分类</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-info</td>
+<td>显示每个输入文件的简要描述，以及该输入文件中每个架构类型的名称。</td>
+</tr>
+<tr>
+<td>-detailed_info</td>
+<td>显示输入通用文件中架构类型的详细列表（通用标题中每个架构的所有信息）。</td>
+</tr>
+<tr>
+<td>-thin [arch_type]</td>
+<td>读取一个输入文件，并使用指定的arch_type创建一个瘦身后输出文件。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-create</td>
+<td>从一个或多个输入文件创建一个通用输出文件。当命令行指定输入文件时，每个文件中的所有架构都将复制到输出文件中，而当使用全局-arch选项包含输入文件时，只会从该输入文件中复制指定的架构。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-remove [arch_type]</td>
+<td>读取一个通用输入文件，然后从该通用文件中删除arch_type，将结果放在输出文件中。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-replace [arch_type] [file_name]</td>
+<td>读取一个通用输入文件；在输出文件中，将输入文件的arch_type内容替换为指定file_name的内容。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-extract [arch_type]</td>
+<td>读取一个通用输入文件，并将arch_type从该通用文件复制到仅包含该架构的通用输出文件中。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-extract_family [arch_type]</td>
+<td>读取一个通用输入文件，并将arch_type所处家族的所有arch_types从该通用文件中复制到仅包含这些架构的输出文件中。如果只找到一个体系结构或通用，文件将是瘦身的。此命令需要-output选项。</td>
+</tr>
+<tr>
+<td>-archs</td>
+<td>仅显示单个输入文件中的架构名称。每个架构名称都是一个单词，使此选项适合shell脚本。未知架构将用“未知”以及数字CPU类型和CPU子类型值表示为单个单词。</td>
+</tr>
+<tr>
+<td>-verify_arch [arch_type]</td>
+<td>读取一个输入文件，并验证文件中是否存在指定的arch_types。如果是这样，则以0的状态退出，否则以1的状态退出。由于可以同时验证多个arch_type，因此所有输入文件必须显示在命令行上的-verify_arch标志之前。</td>
+</tr>
+<tr>
+<td>-arch_blank [arch_type]</td>
+<td>指定arch_type的输出将是MH_DYLIB_STUB文件。此命令不能与-create以外的任何操作一起使用。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="选项">选项</h2>
+<table>
+<thead>
+<tr>
+<th>选项分类</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-arch [arch_type] [intput_file]</td>
+<td>告诉lipo input_file包含指定的架构类型。如果input_file是一个对象文件、通用文件或其他架构lipo可以理解的文件，则没有必要使用选项。</td>
+</tr>
+<tr>
+<td>-hideARM64</td>
+<td>在创建包含32位和64位ARM文件的通用二进制文件时，此选项将要求lipo在末尾添加64位文件，而不是将其包含在文件中存在的架构计数中。文件必须是可执行文件（Mach-O文件类型MH_EXECUTE）。如果32位ARM和64位ARM文件都不存在，并且没有其他文件可以以这种方式隐藏，则此选项无效。此选项仅适用于-create、-remove和-replace命令，并且仅适用于在旧系统上测试变通方法的工具和工作流程。</td>
+</tr>
+<tr>
+<td>-output  [output_file]</td>
+<td>创建新文件的命令写入-output标志指定的输出文件。-create、-extract、-extract_family、-remove、-replace和-thin命令都需要此选项。</td>
+</tr>
+<tr>
+<td>-segalign [arch_type value]</td>
+<td>在创建包含该架构的通用文件时，设置指定arch_type的段对齐。值是一个十六进制数字，必须是2的积分幂。只有当lipo无法弄清楚输入文件（目前不是对象文件）的对齐方式时，或者当它过于保守地猜测对齐时，才需要这样做。Lipo未知文件的默认值为0（2^0，或一个字节的对齐），存档的默认对齐为4（2^2，或4字节对齐）。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>arch_type 代表支持的架构名称：i386、armv7、armv7s、x86_64、arm64、arm64e</strong></p>
+<h2 id="示例">示例</h2>
+<pre tabindex="0"><code>lipo /Users/yourname/lib/libssl.a -info
+lipo /Users/yourname/lib/libssl.a -thin arm64 -output /Users/yourname/lib/libssl_arm64.a
+lipo /Users/yourname/lib/libssl_arm64.a -info
+lipo /Users/yourname/lib/libssl.a -thin armv7 -output /Users/yourname/lib/libssl_armv7.a
+lipo /Users/yourname/lib/libssl_armv7.a -info
+lipo /Users/yourname/lib/libssl_armv7.a /Users/yourname/lib/libssl_arm64.a -create -output /Users/yourname/lib/libssl__arm64_armv7.a
+lipo /Users/paulchou/lib/libssl__arm64_armv7.a -detailed_info
+</code></pre><h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://ss64.com/osx/lipo.html">SS64: lipo</a></li>
+<li><a href="https://keith.github.io/xcode-man-pages/lipo.1.html">General Commands Manual：LIPO</a></li>
+</ul>
 
-            
-            </div>
-            
-            
 
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
+                
+                
+<div class="entry-shang text-center">
     
+	    <p>「真诚赞赏，手留余香」</p>
 	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/zitao.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>他强任他强，清风拂山岗。</p>
-            
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:youremail@gmail.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/yourgithub">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-            
-               
-               
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            
-            
-        </div>
-    </section>
-    
-
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://zhaozhihan.com">Linda的博客</a></li>
-            
-        </ul>
-    </section>
-    
-    
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
 </div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://zitaodev.github.io/"><img src="/img/favicon.png" />子涛</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
 
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://zhaozhihan.com">Linda的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
         </div>
     </div>
 </article>
