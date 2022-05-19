@@ -5,7 +5,17 @@
     <link>https://zitaodev.github.io/</link>
     <description>Recent content on 子涛</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://zitaodev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 May 2022 15:59:42 +0800</lastBuildDate><atom:link href="https://zitaodev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lipo 工具操作手册</title>
+      <link>https://zitaodev.github.io/post/lipo-%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Wed, 18 May 2022 15:59:42 +0800</pubDate>
+      
+      <guid>https://zitaodev.github.io/post/lipo-%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</guid>
+      <description>前言 lipo 是一个在通用文件上创建或操作的工具，用于从单个架构文件中创建通用文件或者从通用文件中提取单个架构文件，并显示架构信息。lipo一次只能</description>
+    </item>
+    
     <item>
       <title></title>
       <link>https://zitaodev.github.io/search/placeholder/</link>
